@@ -25,7 +25,8 @@ while guess_indx < len(secret_word):
             alt_indx = alt_indx + 1
         if character_search is True:
             emoji_guess = emoji_guess + YELLOW_BOX
-        else: emoji_guess = emoji_guess + WHITE_BOX
+        else: 
+            emoji_guess = emoji_guess + WHITE_BOX
     guess_indx = guess_indx + 1
 print(emoji_guess)
 
