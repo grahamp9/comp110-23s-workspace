@@ -1,9 +1,11 @@
-"""EX04 - 'list' Utility Functions"""
+"""EX04 - 'list' Utility Functions."""
 __author__ = "730408563"
 
 
 def all(int_list: list[int], main_int: int) -> bool:
-    """Checks to see if input matches all other numbers"""
+    """Checks to see if input matches all other numbers."""
+    if len(int_list) < 1:
+        return False
     search_idx: int = 0
     while search_idx < len(int_list):
         if int_list[search_idx] != main_int:
@@ -13,7 +15,7 @@ def all(int_list: list[int], main_int: int) -> bool:
 
 
 def max(input: list[int]) -> int:
-    """Finds the largest interval from a list"""
+    """Finds the largest interval from a list."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty list")
     search_idx: int = 0
@@ -26,7 +28,7 @@ def max(input: list[int]) -> int:
 
 
 def is_equal(int_list_2: list[int], int_list_3: list[int]) -> bool:
-    """Checks to see if every element at every index is equal"""
+    """Checks to see if every element at every index is equal."""
     search_idx: int = 0
     if len(int_list_2) != len(int_list_3):
         return False
