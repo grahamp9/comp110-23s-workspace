@@ -1,15 +1,18 @@
 """EX05 - Utils."""
 __author__ = "730408563"
 
+
 def only_evens(int_list: list[int]) -> list[int]: 
     """Finds the even numbers from a list."""
     even_list: list[int] = list()
-    for item in range (0,len(int_list)):
+    for item in range(0, len(int_list)):
         if int_list[item] % 2 == 0:
             even_list.append(int_list[item])
     return even_list
 
+
 def concat(list_1: list[int], list_2: list[int]) -> list[int]:
+    """Combines two lists into one."""
     concat_list: list[int] = list()
     for item in list_1:
         concat_list.append(item)
@@ -18,7 +21,8 @@ def concat(list_1: list[int], list_2: list[int]) -> list[int]:
     return concat_list
 
         
-def sub(a_list: list[int], start_idx: int, end_idx: int) -> list [int]:
+def sub(a_list: list[int], start_idx: int, end_idx: int) -> list[int]:
+    """Creates a new list given the start and end indexes."""
     if len(a_list) == 0 or start_idx >= len(a_list) or end_idx <= 0:
         return list()
     if end_idx >= len(a_list):
