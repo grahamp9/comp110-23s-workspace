@@ -1,3 +1,5 @@
+"""EX06 - An Adventure."""
+__author__ = "730408563"
 
 from random import randint
 points: int = 0
@@ -64,16 +66,5 @@ def exit_statement () -> None:
   
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
 
 
