@@ -9,29 +9,34 @@ coin: str = "\U0001FA99"
 skull: str = "\U0001F480"
 
 
-def greet () -> None: 
+def greet() -> None: 
     """Greets the player."""
     global player 
-    player = input("Greetings noble adventurer! What is your name? ")
+    print("Greetings noble adventurer!")
+    player = input("What is your name? ")
     
+
 def main() -> None:
+    """Main function for my adventure game."""
     global points
     greet()
     choice_1 = input(f"Hello {player}! Choose one of these options: fight, flip, or flee: ")
     while choice_1 == "flip" or choice_1 == "fight":
         if choice_1 == "flip":
-            coin_round ()
+            coin_round()
             choice_1 = input(f"Hello {player}! Choose one of these options: fight, flip, or flee: ")
         if choice_1 == "fight":
             points = dragon_round(points)
             choice_1 = input(f"Hello {player}! Choose one of these options: fight, flip, or flee: ")
-    exit_statement ()
+    exit_statement()
     points = 0
 
-def coin_round () -> None:
-    flip_value: int = randint(1,2)
+
+def coin_round() -> None:
+    """Flips a coin and assigns points if correct."""
+    flip_value: int = randint(1, 2)
     coin_guess: str = input(f"{coin} Pick heads or tails, {player} {coin} :")
-    guess_value: int = ()
+    guess_value: int = 0
     if coin_guess == "heads":
         guess_value = 1 
     elif coin_guess == "tails":
@@ -43,28 +48,30 @@ def coin_round () -> None:
         print("Correct! You will now choose again....")
         global points
         points += 1
-        print (f"points: {points}")
+        print(f"points: {points}")
     else:
         print(f"{skull} Sorry, {player}, you guessed incorrectly. {skull}")
-        exit_statement ()
+        exit_statement()
         points = 0 
 
-def dragon_round (points: int) -> int:
+
+def dragon_round(points: int) -> int:
+    """Fights a dragon and assigns points if victorious."""
     dragon_move: str = input(f"{dragon} You encounter a dragon, should you move left, right, up, or down? {dragon}")
     if dragon_move == "down":
-        print ("Very nice, you will now choose again.....")
+        print("Very nice, you will now choose again.....")
         points += 5
-        print (f"points: {points}")
+        print(f"points: {points}")
     else:
-        exit_statement ()
+        exit_statement()
         points = 0 
     return points
 
 
-def exit_statement () -> None:
+def exit_statement() -> None:
+    """Exits the game."""
     print(f"{skull} Thank you for playing {player}, good luck in your future adventures! {skull} Points = {points}") 
   
+
 if __name__ == "__main__":
     main()
-
-

@@ -1,3 +1,3 @@
-names: list[str] = ["graham", "john", "jesse"]
-for idx in range (0,3):
-    print (f"{idx}: {names[idx]}")
+list1: list[int] = [1,2,3]
+for item in list:
+    print(list[item])

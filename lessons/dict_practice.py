@@ -4,6 +4,8 @@ ice_cream: dict[str, int] = {"chocolate": 12, "vanilla": 8, "strawberry": 5}
 ice_cream ["mint"] = 3 
 print("After adding mint:")
 print(ice_cream)
+for item in ice_cream:
+    print (ice_cream[item])
 
 #removing 
 ice_cream.pop("mint")
