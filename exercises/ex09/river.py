@@ -1,9 +1,13 @@
 """File to define River class"""
 
-from exercises.ex09.fish import Fish
-from exercises.ex09.bear import Bear
+from fish import Fish
+from bear import Bear
 
 class River:
+
+    day: int
+    bears: list
+    fish: list
     
     def __init__(self, num_fish: int, num_bears:int):
         """New River with num_fish Fish and num_bears Bears"""
@@ -16,24 +20,60 @@ class River:
         for x in range(0, num_bears):
             self.bears.append(Bear())
 
+
     def check_ages(self):
+        """Checks ages of bears and fish."""
+        new_bears: list[int] = []
+        new_fish: list[int] = []
+        for bear in self.bears:
+            if bear.age > 5:
+                new_bears.append(bear)
+        self.bears = new_bears
+        for fish in self.fish:
+            if self.age.fish > 3:
+                new_fish.append(fish)
+        self.fish = new_fish
         return None
 
+
     def bears_eating(self):
+        """Removes fish when bears eat."""
+        for bear in self.bears:
+            if len(self.fish) >= 5:
+                self.remove_fish(3)
+                bear.eat(3)
         return None
     
     def check_hunger(self):
+        """Checks hunger in bears."""
+        for bear in self.bears:
+            if bear.hunger_score < 0:
+                self.bears.pop(0)
         return None
         
+
     def repopulate_fish(self):
+        """Creates more fish offspring if population supports."""
+        fish_offspring: int = (self.fish//2) * 4
+        self.fish.append(fish_offspring)
         return None
     
+
     def repopulate_bears(self):
+        """Creates more bear offspring if population supports."""
+        bear_offspring: int = (self.bears//2)
+        self.bears.append(bear_offspring)
         return None
     
+
     def view_river(self):
+        """Shows the river populations and days."""
+        print(f"~~~{self.day}~~~")
+        print(len(self.fish))
+        print(len(self.bears))
         return None
             
+
     def one_river_day(self):
         """Simulate one day of life in the river"""
         # Increase day by 1
@@ -57,3 +97,24 @@ class River:
         # Visualize River
         self.view_river()
             
+
+    def one_river_week(self):
+        """Shows one week in the river."""
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        return None
+    
+
+    def remove_fish(self, amount: int):
+        """Removes fish from the river."""
+        i: int = 0
+        while i < (amount - 1):
+            self.fish.pop[i]
+            i += 1
+        return None
+
