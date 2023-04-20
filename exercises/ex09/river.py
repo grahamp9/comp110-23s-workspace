@@ -1,7 +1,8 @@
 """File to define River class"""
+__author__ = "730408563"
 
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
 
 class River:
 
@@ -23,14 +24,14 @@ class River:
 
     def check_ages(self):
         """Checks ages of bears and fish."""
-        new_bears: list[int] = []
-        new_fish: list[int] = []
+        new_bears: list[Bear] = []
+        new_fish: list[Fish] = []
         for bear in self.bears:
-            if bear.age > 5:
+            if bear.age >= 5:
                 new_bears.append(bear)
         self.bears = new_bears
         for fish in self.fish:
-            if self.age.fish > 3:
+            if fish.age <= 3:
                 new_fish.append(fish)
         self.fish = new_fish
         return None
@@ -54,23 +55,23 @@ class River:
 
     def repopulate_fish(self):
         """Creates more fish offspring if population supports."""
-        fish_offspring: int = (self.fish//2) * 4
+        fish_offspring: Fish = (self.fish//2) * 4
         self.fish.append(fish_offspring)
         return None
     
 
     def repopulate_bears(self):
         """Creates more bear offspring if population supports."""
-        bear_offspring: int = (self.bears//2)
+        bear_offspring: Bear = (self.bears//2)
         self.bears.append(bear_offspring)
         return None
     
 
     def view_river(self):
         """Shows the river populations and days."""
-        print(f"~~~{self.day}~~~")
-        print(len(self.fish))
-        print(len(self.bears))
+        print(f"~~~ Day: {self.day} ~~~")
+        print(f"Fish population: {len(self.fish)}")
+        print(f"Fish population: {len(self.bears)}")
         return None
             
 
