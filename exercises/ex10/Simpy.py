@@ -93,7 +93,7 @@ class Simpy:
         return new_item
         
     def __gt__(self, rhs: Union[Simpy, float]) -> list[bool]:
-        """Check if a Simpy is greater than another Simpy or set of floats."""
+        """Check if a Simpy is greater than a Simpy or set of floats."""
         new_item: list[bool] = []
         if isinstance(rhs, Simpy):
             assert len(self.values) == len(rhs.values)
